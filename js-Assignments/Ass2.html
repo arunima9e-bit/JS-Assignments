@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-card">
+  <form name="RegisterForm" onsubmit="return validateForm()">
+    
+
+    <h2>Registration Form</h2>
+     
+    <label for="firstname">Firstname:</label><br />
+    <div class="input-wrap">
+       <input type="text" id="firstname" name="firstname" maxlength="50" /><br />
+       <span id="fname-error" class="error">First name is required.</span><br />
+    </div>
+    <br />
+
+    <label for="lastname">LastName:</label><br />
+    <div class="input-wrap">
+      <input type="text" id="lastname" name="lastname" maxlength="50" /><br />
+      <span id="lname-error" class="error">LastName is required.</span><br />
+    </div>
+    <br />
+
+    <label for="dob">Date of Birth :</label><br />
+    <div class="input-wrap">
+        <select id="dob-day">
+          <option value="">Day</option>
+        </select>
+        <select id="dob-month">
+          <option value="">Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <select id="dob-year">
+          <option value="">Year</option>
+        </select>
+        <span id="d-error" class="error">Date of Birth is required.</span><br />
+      </div>
+    <br />
+
+    <label>Name of Father:</label><br />
+    <div class="input-wrap">
+      <input type="text" name="father" maxlength="50" /><br />
+    </div>
+    <br />
+
+    <label>Name of Mother:</label><br />
+    <div class="input-wrap">
+      <input type="text" name="mother" maxlength="50" /><br />
+    </div>
+    <br />
+
+    <label for="gender">Gender:</label>
+      <div class="input-wrap">
+        <label><input type="radio" name="gender" id="gender-male"   value="Male" /> Male</label>   
+        <label><input type="radio" name="gender" id="gender-female" value="Female" /> Female</label>
+        <label><input type="radio" name="gender" id="gender-other"  value="Other" /> Other</label>
+      <span id="g-error" class="error">Gender is required.</span><br />
+    </div>
+    <br />
+    
+     <label for="nationality">Nationality</label>
+     <div class="input-wrap">
+      <select id="nation">
+        <option value="">-- Select Nationality --</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Australia">Australia</option>
+        <option value="China">China</option>
+        <option value="India">India</option>
+        <option value="Japan">Japan</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="Brazil">Brazil</option>
+      </select>
+       <span id="n-error" class="error">Nationality is required.</span><br />
+    </div>
+    <br />
+
+    <label for="course">Course:</label>
+    <div class="input-wrap">
+      <select id="course">
+        <option value="">-- Select Course --</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="M.Tech">M.Tech</option>
+        <option value="MCA">MCA</option>
+        <option value="M.Phil">M.Phil</option>
+        <option value="Ph.D">Ph. D</option> 
+      </select>
+      <span id="c-error" class="error">Please select a course.</span><br />
+    </div>
+    <br />
+    
+
+    <label for="specialization">Specialization</label>
+     <div class="input-wrap">
+      <select id="special">
+        <option value="">-- Select Specialization --</option>
+        <option value="ECE">ECE</option>
+        <option value="CSE">CSE</option>
+        <option value="ME">ME</option>
+        <option value="PE">PE</option>
+        <option value="CE">CE</option>
+        <option value="AE">AE</option>
+        <option value="CHE">CHE</option>
+      </select>
+       <span id="s-error" class="error">Please select a specialization.</span>
+    </div>
+    <br />
+
+    <label for="notes">Notes</label>
+    <div class="input-wrap">
+      <textarea id="notes" cols="50" rows="5" maxlength="250"
+        placeholder="Enter any additional notes here (max 250 characters)..."></textarea>
+    </div>
+    <br />
+
+    
+    <input type="submit" class="submit-btn" value="Register" />
+    
+
+  </form>
+  </div>
+
+  <script>
+    window.onload = function () {
+    populateDays();
+
+    document.getElementById('dob-month').addEventListener('change', populateDays);
+    document.getElementById('dob-year').addEventListener('change', populateDays);
+  };
+
+  window.onload = function () {
+
+    var yearEl = document.getElementById('dob-year');
+    var currentYear = new Date().getFullYear();
+    for (var y = currentYear; y >= 1900; y--) {
+      var opt = document.createElement('option');
+      opt.value = y;
+      opt.textContent = y;
+      yearEl.appendChild(opt);
+    }
+
+
+    populateDays();
+
+    document.getElementById('dob-month').addEventListener('change', populateDays);
+    document.getElementById('dob-year').addEventListener('change', populateDays);
+  };
+
+  function populateDays() {
+    var dayEl   = document.getElementById('dob-day');
+    var monthEl = document.getElementById('dob-month');
+    var yearEl  = document.getElementById('dob-year');
+
+    var selectedDay = dayEl.value;
+    var month   = parseInt(monthEl.value) || 0;
+    var year    = parseInt(yearEl.value)  || 0;
+    var maxDays = new Date(year || 2000, month, 0).getDate();
+
+    while (dayEl.options.length > 1) dayEl.remove(1);
+
+    for (var d = 1; d <= maxDays; d++) {
+      var opt = document.createElement('option');
+      opt.value = d;
+      opt.textContent = d;
+      dayEl.appendChild(opt);
+    }
+
+    if (selectedDay && parseInt(selectedDay) <= maxDays) {
+      dayEl.value = selectedDay;
+    }
+  }
+
+    function validateForm() {
+      var isValid = true;
+
+      var firstname = document.getElementById('firstname').value;
+      var fnameError = document.getElementById('fname-error');
+      if (!firstname) {
+        fnameError.style.display = 'inline';
+        isValid = false;
+      } else {
+        fnameError.style.display = 'none';
+      }
+
+      var lastname = document.getElementById('lastname').value;
+      var lnameError = document.getElementById('lname-error');
+      if (!lastname) {
+        lnameError.style.display = 'inline';
+        isValid = false;
+      } else {
+        lnameError.style.display = 'none';
+      }
+
+     const dayEl = document.getElementById('dob-day').value;
+     const monthEl = document.getElementById('dob-month').value;
+     const yearEl = document.getElementById('dob-year').value;
+     var dError = document.getElementById('d-error');
+      if (!dayEl||!monthEl||!yearEl) {
+        dError.style.display = 'inline';
+        isValid = false;
+      } else {
+        
+    var dob = new Date(yearEl, monthEl - 1, dayEl);
+    if (dob >= new Date()) {
+    dError.style.display = 'inline';
+    isValid = false;
+    } else {
+    dError.style.display = 'none';
+   }
+   }
+
+       var gender = document.querySelector('input[name="gender"]:checked');
+       var gError = document.getElementById('g-error');
+       if (!gender) {
+        gError.style.display = 'inline';
+        isValid = false;
+      } else {
+        gError.style.display = 'none';
+      }
+
+      var nation = document.getElementById('nation').value;
+      var nError = document.getElementById('n-error');
+       if (!nation) {
+        nError.style.display = 'inline';
+        isValid = false;
+      } else {
+        nError.style.display = 'none';
+      }
+
+      var course = document.getElementById('course').value;
+      var cError = document.getElementById('c-error');
+       if (!course) {
+        cError.style.display = 'inline';
+        isValid = false;
+      } else {
+        cError.style.display = 'none';
+      }
+
+      var special = document.getElementById('special').value;
+      var sError = document.getElementById('s-error');
+       if (!special) {
+        sError.style.display = 'inline';
+        isValid = false;
+      } else {
+        sError.style.display = 'none';
+      }
+
+
+      return isValid;
+    }
+  </script>
+
+</body>
+</html>

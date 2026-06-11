@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.form-card {
+  background: #ffffff;
+  border: 0.5px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.form-card h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.form-card p {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.input-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* Text & password inputs */
+.input-wrap input[type="text"],
+.input-wrap input[type="password"] {
+  width: 100%;
+  height: 36px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 0.5px solid rgba(0,0,0,0.25);
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #111;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+
+.input-wrap input[type="radio"] {
+  margin-right: 6px;
+}
+
+.input-wrap label.inline-label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 16px;
+  font-weight: normal;
+}
+
+
+.input-wrap select {
+  height: 36px;
+  padding: 0 10px;
+  border: 0.5px solid rgba(0,0,0,0.25);
+  border-radius: 8px;
+  font-size: 14px;
+  margin-right: 6px;
+  background: #fff;
+  color: #111;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+/* Textareas */
+.input-wrap textarea {
+  width: 100%;
+  padding: 10px;
+  border: 0.5px solid rgba(0,0,0,0.25);
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+/* Range sliders */
+.input-wrap input[type="range"] {
+  width: 60%;
+  vertical-align: middle;
+  accent-color: #1a1a2e;
+}
+
+/* Focus states */
+.input-wrap input[type="text"]:focus,
+.input-wrap input[type="password"]:focus,
+.input-wrap select:focus,
+.input-wrap textarea:focus {
+  border-color: #1a1a2e;
+  box-shadow: 0 0 0 3px rgba(26,26,46,0.1);
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #1a1a2e;
+  border: none;
+  color: #fff;
+  margin-top: 1rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+  background: #378add;
+}
+
+.submit-btn:active {
+  transform: scale(0.99);
+}
+
+/* Error messages */
+.error {
+  color: #e24b4a;
+  font-size: 12px;
+  display: none;
+  margin-top: 4px;
+}
+
+/* Success banner */
+.success-banner {
+  display: none;
+  margin-top: 1rem;
+  padding: 12px 16px;
+  background: #eaf3de;
+  border: 1px solid #c0dd97;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #27500a;
+  text-align: center;
+}
+
+.success-banner.show {
+  display: block;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+table th {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 13px;
+  background: #f0f0f0;
+  text-align: left;
+}
+
+table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  vertical-align: top;
+}
+
+table .input-wrap {
+  margin-bottom: 0;
+}
+
+.range-value {
+  font-weight: bold;
+  margin-left: 8px;
+}

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <div class="form-card">
+  <form name="RegisterForm" onsubmit="return validateForm()" novalidate>
+
+    <h2>Registration Form</h2>
+
+    <h3>Basic Details</h3>
+
+    <label for="firstname">Firstname:</label>
+    <div class="input-wrap">
+       <input type="text" id="firstname" name="firstname" maxlength="50" />
+       <span id="fname-error" class="error">First name is required.</span>
+    </div>
+
+    <label for="lastname">LastName:</label>
+    <div class="input-wrap">
+      <input type="text" id="lastname" name="lastname" maxlength="50" />
+      <span id="lname-error" class="error">LastName is required.</span>
+    </div>
+
+    <label for="dob-day">Date of Birth:</label>
+    <div class="input-wrap">
+        <select id="dob-day">
+          <option value="">Day</option>
+        </select>
+        <select id="dob-month">
+          <option value="">Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <select id="dob-year">
+          <option value="">Year</option>
+        </select>
+        <span id="d-error" class="error">Date of Birth is required.</span>
+    </div>
+
+    <label for="father">Name of Father:</label>
+    <div class="input-wrap">
+      <input type="text" id="father" name="father" maxlength="50" />
+    </div>
+
+    <label for="mother">Name of Mother:</label>
+    <div class="input-wrap">
+      <input type="text" id="mother" name="mother" maxlength="50" />
+    </div>
+
+    <label>Gender:</label>
+    <div class="input-wrap">
+        <label class="inline-label"><input type="radio" name="gender" id="gender-male"   value="Male" /> Male</label>
+        <label class="inline-label"><input type="radio" name="gender" id="gender-female" value="Female" /> Female</label>
+        <label class="inline-label"><input type="radio" name="gender" id="gender-other"  value="Other" /> Other</label>
+        <span id="g-error" class="error">Gender is required.</span>
+    </div>
+
+     <label for="nation">Nationality:</label>
+     <div class="input-wrap">
+      <select id="nation">
+        <option value="">-- Select Nationality --</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Australia">Australia</option>
+        <option value="China">China</option>
+        <option value="India">India</option>
+        <option value="Japan">Japan</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="Brazil">Brazil</option>
+      </select>
+       <span id="n-error" class="error">Nationality is required.</span>
+    </div>
+
+    <h3>Communication Details</h3>
+
+    <label for="email">Email:</label>
+    <div class="input-wrap">
+      <input type="text" id="email" name="email" maxlength="100" />
+      <span id="e-error" class="error">Please enter a valid email address.</span>
+    </div>
+
+    <label for="mobile">Mobile Number:</label>
+    <div class="input-wrap">
+      <input type="text" id="mobile" name="mobile" maxlength="20" />
+      <span id="m-error" class="error">Please enter mobile number.</span>
+    </div>
+
+    <label for="altphone">Alternate Number:</label>
+    <div class="input-wrap">
+      <input type="text" id="altphone" name="altphone" maxlength="20" />
+    </div>
+
+    <label for="address">Postal Address:</label>
+    <div class="input-wrap">
+      <textarea id="address" name="address" cols="50" rows="5"></textarea>
+    </div>
+
+    <h3>Educational Details</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Specialization</th>
+          <th>Year of Passing</th>
+          <th>Grade / Mark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td><div class="input-wrap"><input type="text" id="edu-course-1" maxlength="20" /></div></td>
+            <td><div class="input-wrap"><input type="text" id="edu-spec-1" maxlength="20" /></div></td>
+            <td><div class="input-wrap">
+               <select id="pass-year1"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap"><input type="text" id="edu-grade-1" maxlength="20" /></div></td>
+        </tr>
+        <tr>
+            <td><div class="input-wrap"><input type="text" id="edu-course-2" maxlength="20" /></div></td>
+            <td><div class="input-wrap"><input type="text" id="edu-spec-2" maxlength="20" /></div></td>
+            <td><div class="input-wrap">
+               <select id="pass-year2"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap"><input type="text" id="edu-grade-2" maxlength="20" /></div></td>
+        </tr>
+        <tr>
+            <td><div class="input-wrap"><input type="text" id="edu-course-3" maxlength="20" /></div></td>
+            <td><div class="input-wrap"><input type="text" id="edu-spec-3" maxlength="20" /></div></td>
+            <td><div class="input-wrap">
+               <select id="pass-year3"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap"><input type="text" id="edu-grade-3" maxlength="20" /></div></td>
+        </tr>
+        <tr>
+            <td><div class="input-wrap"><input type="text" id="edu-course-4" maxlength="20" /></div></td>
+            <td><div class="input-wrap"><input type="text" id="edu-spec-4" maxlength="20" /></div></td>
+            <td><div class="input-wrap">
+               <select id="pass-year4"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap"><input type="text" id="edu-grade-4" maxlength="20" /></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Work Experience</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Position</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td><div class="input-wrap"><input type="text" id="work-co-1" maxlength="30" /></div></td>
+            <td><div class="input-wrap"><input type="text" id="work-pos-1" maxlength="20" /></div></td>
+            <td><div class="input-wrap">
+              <select id="from-month1">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="from-year1"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap">
+              <select id="to-month1">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="to-year1"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap"><textarea id="work-rem-1" cols="10" rows="2"></textarea></div></td>
+        </tr>
+        <tr>
+            <td><div class="input-wrap"><input type="text" id="work-co-2" maxlength="30" /></div></td>
+            <td><div class="input-wrap"><input type="text" id="work-pos-2" maxlength="20" /></div></td>
+            <td><div class="input-wrap">
+              <select id="from-month2">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="from-year2"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap">
+              <select id="to-month2">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="to-year2"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap"><textarea id="work-rem-2" cols="10" rows="2"></textarea></div></td>
+        </tr>
+        <tr>
+            <td><div class="input-wrap"><input type="text" id="work-co-3" maxlength="30" /></div></td>
+            <td><div class="input-wrap"><input type="text" id="work-pos-3" maxlength="20" /></div></td>
+            <td><div class="input-wrap">
+              <select id="from-month3">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="from-year3"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap">
+              <select id="to-month3">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="to-year3"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap"><textarea id="work-rem-3" cols="10" rows="2"></textarea></div></td>
+        </tr>
+        <tr>
+            <td><div class="input-wrap"><input type="text" id="work-co-4" maxlength="30" /></div></td>
+            <td><div class="input-wrap"><input type="text" id="work-pos-4" maxlength="20" /></div></td>
+            <td><div class="input-wrap">
+              <select id="from-month4">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="from-year4"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap">
+              <select id="to-month4">
+                <option value="">Month</option>
+                <option value="1">January</option><option value="2">February</option>
+                <option value="3">March</option><option value="4">April</option>
+                <option value="5">May</option><option value="6">June</option>
+                <option value="7">July</option><option value="8">August</option>
+                <option value="9">September</option><option value="10">October</option>
+                <option value="11">November</option><option value="12">December</option>
+              </select>
+              <select id="to-year4"><option value="">Year</option></select>
+            </div></td>
+            <td><div class="input-wrap"><textarea id="work-rem-4" cols="10" rows="2"></textarea></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Identification Details</h3>
+
+    <label for="adhaar">Aadhar Number:</label>
+    <div class="input-wrap">
+       <input type="text" id="adhaar" name="adhaar" maxlength="16" />
+       <span id="a-error" class="error">Please enter Aadhar Number.</span>
+    </div>
+
+    <label for="pan">PAN:</label>
+    <div class="input-wrap">
+      <input type="text" id="pan" name="pan" maxlength="10" />
+    </div>
+
+    <label for="passport">Passport Number:</label>
+    <div class="input-wrap">
+      <input type="text" id="passport" name="passport" maxlength="8" />
+    </div>
+
+    <label for="exp-month">Passport Expiry:</label>
+    <div class="input-wrap">
+        <select id="exp-month">
+          <option value="">Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <select id="exp-year">
+          <option value="">Year</option>
+        </select>
+    </div>
+
+    <label for="pf">PF Account Number:</label>
+    <div class="input-wrap">
+      <input type="text" id="pf" name="pf" maxlength="20" />
+    </div>
+
+    <h3>Comments</h3>
+
+    <label for="qual-exp">Quality of Experience:</label>
+    <div class="input-wrap">
+      <input type="range" id="qual-exp" min="1" max="5" step="1" value="3"
+        oninput="document.getElementById('qual-exp-val').textContent = this.value" />
+      <span class="range-value" id="qual-exp-val">3</span> / 5
+    </div>
+
+    <label for="qual-edu">Quality of Education:</label>
+    <div class="input-wrap">
+      <input type="range" id="qual-edu" min="1" max="5" step="1" value="3"
+        oninput="document.getElementById('qual-edu-val').textContent = this.value" />
+      <span class="range-value" id="qual-edu-val">3</span> / 5
+    </div>
+
+    <label for="test-result">Technical Test Result:</label>
+    <div class="input-wrap">
+      <input type="text" id="test-result" maxlength="30" />
+    </div>
+
+    <label for="interviewer">Interviewer:</label>
+    <div class="input-wrap">
+      <input type="text" id="interviewer" maxlength="30" />
+    </div>
+
+    <label for="int-comments">Interviewer Comments:</label>
+    <div class="input-wrap">
+      <textarea id="int-comments" cols="50" rows="5"></textarea>
+    </div>
+
+    <label for="remarks">Remarks:</label>
+    <div class="input-wrap">
+      <textarea id="remarks" cols="50" rows="5"></textarea>
+    </div>
+
+    <input type="submit" class="submit-btn" value="Register" />
+
+    <div id="success-banner" class="success-banner">
+      &#10003; Registration submitted successfully!
+    </div>
+
+  </form>
+  </div>
+
+  <script>
+    var curYear = new Date().getFullYear();
+
+    window.onload = function () {
+
+      /* ── Populate DOB Year (1900 -> current) ── */
+      var dobYear = document.getElementById('dob-year');
+      for (var dy = curYear; dy >= 1900; dy--) {
+        var dyo = document.createElement('option');
+        dyo.value = dy; dyo.textContent = dy;
+        dobYear.appendChild(dyo);
+      }
+
+      /* ── Populate Year of Passing dropdowns (1970 -> current) ── */
+      for (var p = 1; p <= 4; p++) {
+        var pYear = document.getElementById('pass-year' + p);
+        for (var y = curYear; y >= 1970; y--) {
+          var po = document.createElement('option');
+          po.value = y; po.textContent = y;
+          pYear.appendChild(po);
+        }
+      }
+
+      /* ── Populate Work Experience From/To years (1980 -> current) ── */
+      for (var w = 1; w <= 4; w++) {
+        ['from-year' + w, 'to-year' + w].forEach(function (id) {
+          var el = document.getElementById(id);
+          for (var wy = curYear; wy >= 1980; wy--) {
+            var wo = document.createElement('option');
+            wo.value = wy; wo.textContent = wy;
+            el.appendChild(wo);
+          }
+        });
+      }
+
+      /* ── Populate Passport Expiry year (current -> +30) ── */
+      var expYear = document.getElementById('exp-year');
+      for (var ey = curYear; ey <= curYear + 30; ey++) {
+        var eo = document.createElement('option');
+        eo.value = ey; eo.textContent = ey;
+        expYear.appendChild(eo);
+      }
+
+      /* ── DOB Day population ── */
+      populateDays();
+      document.getElementById('dob-month').addEventListener('change', populateDays);
+      document.getElementById('dob-year').addEventListener('change', populateDays);
+    };
+
+    function populateDays() {
+      var dayEl   = document.getElementById('dob-day');
+      var monthEl = document.getElementById('dob-month');
+      var yearEl  = document.getElementById('dob-year');
+
+      var selectedDay = dayEl.value;
+      var month   = parseInt(monthEl.value) || 0;
+      var year    = parseInt(yearEl.value)  || 0;
+      var maxDays = new Date(year || 2000, month, 0).getDate();
+
+      while (dayEl.options.length > 1) dayEl.remove(1);
+
+      for (var d = 1; d <= maxDays; d++) {
+        var opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        dayEl.appendChild(opt);
+      }
+
+      if (selectedDay && parseInt(selectedDay) <= maxDays) {
+        dayEl.value = selectedDay;
+      }
+    }
+
+    function validateForm() {
+      var isValid = true;
+
+      /* First name */
+      var firstname = document.getElementById('firstname').value.trim();
+      var fnameError = document.getElementById('fname-error');
+      if (!firstname) {
+        fnameError.style.display = 'inline';
+        isValid = false;
+      } else {
+        fnameError.style.display = 'none';
+      }
+
+      /* Last name */
+      var lastname = document.getElementById('lastname').value.trim();
+      var lnameError = document.getElementById('lname-error');
+      if (!lastname) {
+        lnameError.style.display = 'inline';
+        isValid = false;
+      } else {
+        lnameError.style.display = 'none';
+      }
+
+      /* Date of Birth */
+      var dayEl = document.getElementById('dob-day').value;
+      var monthEl = document.getElementById('dob-month').value;
+      var yearEl = document.getElementById('dob-year').value;
+      var dError = document.getElementById('d-error');
+      if (!dayEl || !monthEl || !yearEl) {
+        dError.style.display = 'inline';
+        isValid = false;
+      } else {
+        var dob = new Date(yearEl, monthEl - 1, dayEl);
+        if (dob >= new Date()) {
+          dError.style.display = 'inline';
+          isValid = false;
+        } else {
+          dError.style.display = 'none';
+        }
+      }
+
+      /* Gender */
+      var gender = document.querySelector('input[name="gender"]:checked');
+      var gError = document.getElementById('g-error');
+      if (!gender) {
+        gError.style.display = 'inline';
+        isValid = false;
+      } else {
+        gError.style.display = 'none';
+      }
+
+      /* Nationality */
+      var nation = document.getElementById('nation').value;
+      var nError = document.getElementById('n-error');
+      if (!nation) {
+        nError.style.display = 'inline';
+        isValid = false;
+      } else {
+        nError.style.display = 'none';
+      }
+
+      /* Email - regex check, only if filled */
+      var email = document.getElementById('email').value.trim();
+      var eError = document.getElementById('e-error');
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email && !emailRegex.test(email)) {
+        eError.style.display = 'inline';
+        isValid = false;
+      } else {
+        eError.style.display = 'none';
+      }
+
+      /* Mobile */
+      var mobile = document.getElementById('mobile').value.trim();
+      var mError = document.getElementById('m-error');
+      if (!mobile) {
+        mError.style.display = 'inline';
+        isValid = false;
+      } else {
+        mError.style.display = 'none';
+      }
+
+      /* Aadhar */
+      var adhaar = document.getElementById('adhaar').value.trim();
+      var aError = document.getElementById('a-error');
+      if (!adhaar) {
+        aError.style.display = 'inline';
+        isValid = false;
+      } else {
+        aError.style.display = 'none';
+      }
+
+      var banner = document.getElementById('success-banner');
+      banner.classList.toggle('show', isValid);
+      if (isValid) {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+
+      return isValid;
+    }
+  </script>
+
+</body>
+</html>

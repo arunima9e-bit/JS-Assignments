@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-card">
+  <form name="loginForm" onsubmit="return validateForm()">
+    
+
+    <h2>Sign in</h2>
+      <p>Enter your credentials to continue</p><br />
+
+    <label for="username">Username:</label><br />
+    <div class="input-wrap">
+       <input type="text" id="username" name="username" maxlength="50" /><br />
+       <span id="uname-error" class="error">Username is required.</span><br />
+    <br />
+    </div>
+
+    <label for="password">Password:</label><br />
+    <div class="input-wrap">
+      <input type="password" id="password" name="password" maxlength="50" /><br />
+      <span id="pw-error" class="error">Password is required.</span><br />
+    </div>
+    <br />
+
+    <input type="checkbox" id="remember" name="remember" />
+    <label for="remember">Remember Credentials</label><br />
+
+    <br />
+    
+    <div class="forgot">
+      <a href="passwordrecovery.aspx">Forgot Password</a><br />
+    </div>
+
+    <br />
+
+    <input type="submit" class="submit-btn" value="Sign In" />
+
+
+  </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      var isValid = true;
+
+      var username = document.getElementById('username').value.trim();
+      var unameError = document.getElementById('uname-error');
+      if (!username) {
+        unameError.style.display = 'inline';
+        isValid = false;
+      } else {
+        unameError.style.display = 'none';
+      }
+
+      var password = document.getElementById('password').value;
+      var pwError = document.getElementById('pw-error');
+      if (!password) {
+        pwError.style.display = 'inline';
+        isValid = false;
+      } else {
+        pwError.style.display = 'none';
+      }
+
+      return isValid;
+    }
+  </script>
+
+</body>
+</html>

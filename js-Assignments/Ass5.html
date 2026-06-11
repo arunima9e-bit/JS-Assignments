@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-card">
+    <form>
+        <h3>Word Occurrence Counter</h3>
+        <textarea id="textArea" rows="10" cols="50"></textarea>
+        <br><br>
+
+        <input type="text" id="searchWord" placeholder="Enter word">
+
+        <button type="button" onclick="countWord()"> Calculate </button>
+        <br><br>
+
+        <p id="result"></p>
+    </form>
+    </div>
+
+
+    <script>
+        function countWord() {
+            let text = document.getElementById("textArea").value.toLowerCase();
+            let word = document.getElementById("searchWord").value.toLowerCase();
+
+            let words = text.match(/\b\w+\b/g);
+            let count = 0;
+
+            if (words) {
+                for (let i = 0; i < words.length; i++) {
+                    if (words[i] === word) {
+                        count++;
+                    }
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "\nOccurrences: " + count;
+        }
+    </script>
+
+</body>
+</html>

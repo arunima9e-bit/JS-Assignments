@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-card">
+    <form>
+        <h3>Character Counter</h3>
+        <textarea id="txt" rows="10" cols="60"
+                  placeholder="Type something here..."></textarea>
+        <br><br>
+        <p>Character Count: <span id="count">0</span></p>
+    </form>
+    </div>
+
+    <script>
+        let textarea = document.getElementById("txt");
+        let count = document.getElementById("count");
+
+        function updateCount() {
+            count.textContent = textarea.value.length;
+        }
+
+        textarea.addEventListener("input", updateCount);
+    </script>
+
+</body>
+</html>
