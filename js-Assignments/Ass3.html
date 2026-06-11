@@ -384,7 +384,7 @@
 
     window.onload = function () {
 
-      /* ── Populate DOB Year (1900 -> current) ── */
+     
       var dobYear = document.getElementById('dob-year');
       for (var dy = curYear; dy >= 1900; dy--) {
         var dyo = document.createElement('option');
@@ -392,7 +392,7 @@
         dobYear.appendChild(dyo);
       }
 
-      /* ── Populate Year of Passing dropdowns (1970 -> current) ── */
+     
       for (var p = 1; p <= 4; p++) {
         var pYear = document.getElementById('pass-year' + p);
         for (var y = curYear; y >= 1970; y--) {
@@ -402,7 +402,7 @@
         }
       }
 
-      /* ── Populate Work Experience From/To years (1980 -> current) ── */
+     
       for (var w = 1; w <= 4; w++) {
         ['from-year' + w, 'to-year' + w].forEach(function (id) {
           var el = document.getElementById(id);
@@ -414,7 +414,7 @@
         });
       }
 
-      /* ── Populate Passport Expiry year (current -> +30) ── */
+      
       var expYear = document.getElementById('exp-year');
       for (var ey = curYear; ey <= curYear + 30; ey++) {
         var eo = document.createElement('option');
@@ -422,7 +422,7 @@
         expYear.appendChild(eo);
       }
 
-      /* ── DOB Day population ── */
+      
       populateDays();
       document.getElementById('dob-month').addEventListener('change', populateDays);
       document.getElementById('dob-year').addEventListener('change', populateDays);
@@ -455,7 +455,7 @@
     function validateForm() {
       var isValid = true;
 
-      /* First name */
+      
       var firstname = document.getElementById('firstname').value.trim();
       var fnameError = document.getElementById('fname-error');
       if (!firstname) {
@@ -465,7 +465,7 @@
         fnameError.style.display = 'none';
       }
 
-      /* Last name */
+     
       var lastname = document.getElementById('lastname').value.trim();
       var lnameError = document.getElementById('lname-error');
       if (!lastname) {
@@ -475,7 +475,7 @@
         lnameError.style.display = 'none';
       }
 
-      /* Date of Birth */
+      
       var dayEl = document.getElementById('dob-day').value;
       var monthEl = document.getElementById('dob-month').value;
       var yearEl = document.getElementById('dob-year').value;
@@ -493,7 +493,7 @@
         }
       }
 
-      /* Gender */
+      
       var gender = document.querySelector('input[name="gender"]:checked');
       var gError = document.getElementById('g-error');
       if (!gender) {
@@ -503,7 +503,7 @@
         gError.style.display = 'none';
       }
 
-      /* Nationality */
+     
       var nation = document.getElementById('nation').value;
       var nError = document.getElementById('n-error');
       if (!nation) {
@@ -513,7 +513,7 @@
         nError.style.display = 'none';
       }
 
-      /* Email - regex check, only if filled */
+      
       var email = document.getElementById('email').value.trim();
       var eError = document.getElementById('e-error');
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -524,7 +524,7 @@
         eError.style.display = 'none';
       }
 
-      /* Mobile */
+     
       var mobile = document.getElementById('mobile').value.trim();
       var mError = document.getElementById('m-error');
       if (!mobile) {
@@ -534,7 +534,7 @@
         mError.style.display = 'none';
       }
 
-      /* Aadhar */
+      
       var adhaar = document.getElementById('adhaar').value.trim();
       var aError = document.getElementById('a-error');
       if (!adhaar) {
